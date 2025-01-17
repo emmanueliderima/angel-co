@@ -1,15 +1,20 @@
-import { Button } from "./components/ui/button"
+import Home from "./pages/Home"
+import { Routes, Route } from "react-router-dom"
+import Meeting from "./pages/Meeting"
+import HomeLayout from "./layouts/HomeLayout"
+import MeetingLayout from "./layouts/MeetingLayout"
 
-function App() {
+const App = () => {
 
   return (
-    <>
-    <div>
-      <Button title="Click" className="bg-success-600">Click</Button>
-      <button className="bg-success-700 text-success-600 p-3">Button</button>
-    </div>
-     <h1 className="text-semibold border border-solid border-green-300">Hi</h1>
-    </>
+    <Routes>
+      <Route element={<HomeLayout />} >
+        <Route path="/" element={<Home />} />
+      </Route>
+      <Route element={<MeetingLayout />}>
+        <Route path="/meeting/:id" element={<Meeting />} />
+      </Route>
+    </Routes>
   )
 }
 

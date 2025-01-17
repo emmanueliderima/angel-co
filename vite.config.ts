@@ -13,12 +13,14 @@ export default defineConfig({
       '@components': path.resolve(__dirname, 'src/components'),
       // @/pages => src/pages
       '@pages': path.resolve(__dirname, 'src/pages'),
-      // @/utils => src/utils
-      '@utils': path.resolve(__dirname, 'src/utils'),
-      // @/styles => src/styles
-      '@styles': path.resolve(__dirname, 'src/styles'),
+      // @/types => src/types
+      '@types': path.resolve(__dirname, 'src/types'),
       // @/assets => src/assets
       '@assets': path.resolve(__dirname, 'src/assets'),
+      //
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      //
+      '@lib': path.resolve(__dirname, 'src/lib')
     },
   }
 })
