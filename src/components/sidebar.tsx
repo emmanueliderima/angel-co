@@ -1,5 +1,5 @@
 import { SidebarLinks } from "@/constants"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 import clsx from "clsx"
 
 const Sidebar = () => {
@@ -11,12 +11,17 @@ const Sidebar = () => {
         {SidebarLinks.map((link, index) => {
           const isActive = useLocation().pathname === link.route || useLocation().pathname.startsWith(link.route.replace('/', "\n"))
           return (
-            <a key={index} href={link.route} className={clsx("flex items-center justify-start rounded-lg gap-4 p-4 ", isActive && 'bg-blue-1')} >
+            <Link key={index} to={link.route} className={clsx("flex items-center justify-start rounded-lg gap-4 p-4 ", isActive && 'bg-blue-1')} >
               <img src={link.iconURL} alt={link.label} />
               <span className="text-lg font-semibold max-lg:hidden">{link.label}</span>
-            </a>
+            </Link>
           )
         })}
+
+        <div className="mt-7 flex flex-col">
+          <button className="p-4 my-2 rounded-lg font-semibold text-lg bg-dark-3">Sign in</button>
+          <button className="p-4 my-2 rounded-lg font-semibold text-lg bg-blue-1">Sign up</button>
+        </div>
 
       </div>
     </div>

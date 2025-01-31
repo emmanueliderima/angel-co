@@ -44,6 +44,9 @@ const config = {
             1: '#F9A90E',
           },
         },
+        textColor: {
+          'gray-1': "#d1d5db"
+        },
         keyframes: {
           'accordion-down': {
             from: { height: '0' },

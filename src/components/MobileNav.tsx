@@ -28,14 +28,19 @@ const MobileNav = () => {
                             const isActive = useLocation().pathname === link.route || useLocation().pathname.startsWith(link.route.replace('/', "\n"))
                             return (
                                 <SheetClose asChild>
-                                    <a key={index} href={link.route} className={clsx("flex items-center w-full max-w-60 rounded-lg gap-4 p-4", isActive && 'bg-blue-1')} >
-                                        <img src={link.iconURL} alt={link.label} />
-                                        <span className="text-lg font-semibold">{link.label}</span>
-                                    </a>
+                                    <div>
+                                        <a key={index} href={link.route} className={clsx("flex items-center w-full max-w-60 rounded-lg gap-4 p-4", isActive && 'bg-blue-1')} >
+                                            <img src={link.iconURL} alt={link.label} />
+                                            <span className="text-lg font-semibold">{link.label}</span>
+                                        </a>
+                                    </div>
                                 </SheetClose>
                             )
-                        })}
-
+                        })}              
+                        <div className="mt-7 flex flex-col">
+                            <button className="p-4 my-2 rounded-lg font-semibold text-lg bg-dark-3">Sign in</button>
+                            <button className="p-4 my-2 rounded-lg font-semibold text-lg bg-blue-1">Sign up</button>
+                        </div>
                     </section>
                 </SheetClose>
             </div>
